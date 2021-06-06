@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8B1CCA12265E9FD100E88EB0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1CCA11265E9FD100E88EB0 /* main.swift */; };
+		8B5853642669CBA50005569F /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8B585390266BF2E90005569F /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B58538F266BF2E90005569F /* data.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -20,11 +22,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		8B58534F2668C20E0005569F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8B5853642669CBA50005569F /* (null) in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8B1CCA0E265E9FD100E88EB0 /* LanguageAppSwift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LanguageAppSwift; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B1CCA11265E9FD100E88EB0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		8B58538F266BF2E90005569F /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +71,7 @@
 		8B1CCA10265E9FD100E88EB0 /* LanguageAppSwift */ = {
 			isa = PBXGroup;
 			children = (
+				8B58538F266BF2E90005569F /* data.json */,
 				8B1CCA11265E9FD100E88EB0 /* main.swift */,
 			);
 			path = LanguageAppSwift;
@@ -72,6 +87,8 @@
 				8B1CCA0A265E9FD100E88EB0 /* Sources */,
 				8B1CCA0B265E9FD100E88EB0 /* Frameworks */,
 				8B1CCA0C265E9FD100E88EB0 /* CopyFiles */,
+				8B58534F2668C20E0005569F /* Embed Frameworks */,
+				8B585370266BEFB40005569F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -93,6 +110,7 @@
 				TargetAttributes = {
 					8B1CCA0D265E9FD100E88EB0 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -113,6 +131,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8B585370266BEFB40005569F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B585390266BF2E90005569F /* data.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8B1CCA0A265E9FD100E88EB0 /* Sources */ = {
@@ -244,8 +273,19 @@
 		8B1CCA16265E9FD100E88EB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_ON_DEMAND_RESOURCES = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LanguageAppSwift/LanguageAppSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -253,8 +293,18 @@
 		8B1CCA17265E9FD100E88EB0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_ON_DEMAND_RESOURCES = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LanguageAppSwift/LanguageAppSwift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
